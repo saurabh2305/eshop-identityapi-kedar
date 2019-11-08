@@ -70,14 +70,14 @@ namespace IdentityAPI
             }
             app.UseCors();
             app.UseSwagger();
-            if (env.IsDevelopment())
-            {
+            //if (env.IsDevelopment())
+            //{
                 app.UseSwaggerUI(config => //swaggerui for testing
                 {
                     config.SwaggerEndpoint("/swagger/v1/swagger.json", "Identity API");
                     config.RoutePrefix = "";
                 });
-            }
+            //}
             InitializeDatabase(app);// this will create tables automatically when application starts using available migration classes
             app.UseMvc();
         }
